@@ -4,8 +4,12 @@ require_once('admin/class/movie.class.php');
 require_once('admin/class/common.class.php');
 
 $movieObject=new Movies();
-// print_r($movieObject);
+
 $latest=$movieObject->getAllLatest();
+$bollywood=$movieObject->getAllBollywoodDashboard();
+$marvel=$movieObject->getAllMarvelDashboard();
+$dc=$movieObject->getAllDcDashboard();
+$south=$movieObject->getAllSouthDashboard();
 
 ?>
 
@@ -18,16 +22,17 @@ include('header.php');
 
 
 
+
 <nav class="navbar navbar-expand-lg navbar-custom"  >
   <div class="container-fluid" >
-    <a class="navbar-brand" href="#" ><h1 style="text-shadow:2px 4px 6px  white">Circuit</h1></a>
+    <a class="navbar-brand" href="index.php" ><img src="logo.png" alt="logo" height="40" width="100"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+      <span class="navbar-toggler-icon"><i class="fa-solid fa-bars" style="color:white;"></i></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav" style="margin-left:25vw">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" style="color:rgb(253, 252, 250);"">Home</a>
+          <a class="nav-link active" aria-current="page" href="#" style=" color:yellow"">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link " href="latest.php">Latest</a>
@@ -44,15 +49,7 @@ include('header.php');
         <li class="nav-item">
           <a class="nav-link" href="south.php">south</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Creator
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="admin/index.php">Admin Panel</a></li>
-            
-          </ul>
-        </li>
+    
       </ul>
     </div>
   </div>
@@ -68,12 +65,12 @@ include('header.php');
     
     
     <div class="swiper-wrapper"  >
-<br>
+
     <?php
         foreach ($latest as $latestmovie) {
         ?>
        
-        <div class="swiper-slide"><a href="movie.php?id=<?php echo $latestmovie['id'];  ?>" target="_blank"><img src="<?php echo $latestmovie['background_image']; ?>" ></a></div>
+        <div class="swiper-slide"><a href="movie.php?id=<?php echo $latestmovie['id'];  ?>" target="_blank"><img src="<?php echo $latestmovie['image']; ?>" ></a></div>
         <?php } ?>
     
 
@@ -82,32 +79,25 @@ include('header.php');
       
     </div>
     
-    <div class="swiper-pagination"></div>
+    <div class="swiper-pagination" ></div>
     
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev" style="color:yellow"></div>
+    <div class="swiper-button-next" style="color:yellow"></div>
     </div>
 
-    <div class="animation" style="display:none;">
-    <div class="bar" style="width:30%;margin-right:5%">
-      <div class="ball"></div>
-    </div>
     
     
-    </div>
-  <br>
-  <!-- Theme area -->
-<div class="theme" >
-        <h1 class="themetitle"  >We have the <span class="highlight">Review</span> ,You <span class="highlight">Needed</span></h1>
-        <hr>
-      </div>
+    
+  
+
 <!-- recent area -->
 
-<hr>
 
-      <div class="recent">
-        <h2 style="padding-left:50px;  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Our Recent Reviews:</h2>
-        <hr>
+
+<div class="recent" style="margin-top:0vh">
+          <div style="background-color:black;color:white;height:7vh;padding-top:0.5vh">
+        <h2 style="padding-left:3%;  font-family:  'Times New Roman', serif;">Latest Review:</h2>
+        </div>
         <br>
         <div class="container">
 
@@ -118,22 +108,107 @@ include('header.php');
        
        <div class="boxes">
         
-        <a href="movie.php?id=<?php echo $latestmovie['id'];  ?>" target="_blank"><div class="box box-1"  style=" background-image: url('<?php echo $latestmovie['background_image'];?>');"></div></a>
+       
+        <a href="movie.php?id=<?php echo $latestmovie['id'];  ?>" ><div class="box box-1"  style=" background-image: url('<?php echo $latestmovie['image'];?>');"></div></a>
       
-      <h3 style="font-weight:bolder"><?php echo $latestmovie['title'] ?></h3>
+        <h3 ><?php echo $latestmovie['title'] ?></h3>
     </div>
 
 
         <?php } ?>
-
-         
-        
-      
-
-
-         
           </div>
+          <div class="recent" style="margin-top:0vh">
+          <div style="background-color:black;color:white;height:7vh;padding-top:1vh">
+        <h2 style="padding-left:3%;  font-family:  'Times New Roman', serif;">Bollywood Review:</h2>
+        </div>
+        <br>
+        <div class="container">
+
+        
+        <?php
+        foreach ($bollywood as $latestmovie) {
+        ?>
+       
+       <div class="boxes">
+        
+       
+        <a href="movie.php?id=<?php echo $latestmovie['id'];  ?>" ><div class="box box-1"  style=" background-image: url('<?php echo $latestmovie['image'];?>');"></div></a>
+        <h3 ><?php echo $latestmovie['title'] ?></h3>
       
+    </div>
+
+
+        <?php } ?>
+          </div>
+          <div class="recent" style="margin-top:0vh">
+          <div style="background-color:black;color:white;height:7vh;padding-top:1vh">
+        <h2 style="padding-left:3%;  font-family:  'Times New Roman', serif;">Marvel Reviews:</h2>
+        </div>
+        <br>
+        <div class="container">
+
+        
+        <?php
+        foreach ($marvel as $latestmovie) {
+        ?>
+       
+       <div class="boxes">
+        
+       
+        <a href="movie.php?id=<?php echo $latestmovie['id'];  ?>" ><div class="box box-1"  style=" background-image: url('<?php echo $latestmovie['image'];?>');"></div></a>
+      
+        <h3 ><?php echo $latestmovie['title'] ?></h3>
+    </div>
+
+
+        <?php } ?>
+          </div>
+          <div class="recent" style="margin-top:0vh">
+          <div style="background-color:black;color:white;height:7vh;padding-top:1vh">
+        <h2 style="padding-left:3%;  font-family:  'Times New Roman', serif;">Disney Reviews:</h2>
+        </div>
+        <br>
+        <div class="container">
+
+        
+        <?php
+        foreach ($dc as $latestmovie) {
+        ?>
+       
+       <div class="boxes">
+        
+       
+        <a href="movie.php?id=<?php echo $latestmovie['id'];  ?>" target="_blank"><div class="box box-1"  style=" background-image: url('<?php echo $latestmovie['image'];?>');"></div></a>
+      
+        <h3 ><?php echo $latestmovie['title'] ?></h3>
+    </div>
+
+
+        <?php } ?>
+          </div> 
+          <div class="recent" style="margin-top:0vh">
+          <div style="background-color:black;color:white;height:7vh;padding-top:1vh">
+        <h2 style="padding-left:3%;  font-family:  'Times New Roman', serif;">South Reviews:</h2>
+        </div>
+        <br>
+        <div class="container">
+
+        
+        <?php
+        foreach ($south as $latestmovie) {
+        ?>
+       
+       <div class="boxes">
+        
+       
+        <a href="movie.php?id=<?php echo $latestmovie['id'];  ?>" target="_blank"><div class="box box-1"  style=" background-image: url('<?php echo $latestmovie['image'];?>');"></div></a>
+        <h3 ><?php echo $latestmovie['title'] ?></h3>
+      
+    </div>
+
+
+        <?php } ?>
+          </div>
       
       
       </div>
@@ -142,7 +217,7 @@ include('header.php');
   <br>
   
   
-  <h4 style="font-size: 25px;  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-left:5%; margin-bottom:0px">This website contains all the review of movies of bollywood .You  can check the latest review as well as old from our menu. </h4>
+  <h6 style="  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-left:5%; margin-bottom:0px">This website contains all the review of movies of bollywood .You  can check the latest review as well as old from our menu. </h6>
   
     </div>
     <br>

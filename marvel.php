@@ -22,9 +22,9 @@ include('header.php');
 
   <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><h1 style="text-shadow:2px 4px 6px  white">Circuit</h1></a>
+    <a class="navbar-brand" href="index.php" ><img src="logo.png" alt="logo" height="40" width="100"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"style="color:white"></i></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
@@ -38,7 +38,7 @@ include('header.php');
           <a class="nav-link" href="bollywood.php">Bollywood</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="marvel.php" style="color:rgb(253, 252, 250);">Marvel</a>
+          <a class="nav-link active" href="marvel.php" style="color:yellow">Marvel</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="dc.php">Disney</a>
@@ -46,15 +46,7 @@ include('header.php');
           <li class="nav-item">
             <a class="nav-link" href="south.php">South</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Creator
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="admin/index.php">Admin Panel</a></li>
-              
-            </ul>
-          </li>
+         
         </ul>
       </div>
     </div>

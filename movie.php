@@ -45,7 +45,7 @@ $moviedata=$movie->getById();
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
 />
-<link rel="stylesheet" href="movie.css">
+<link rel="stylesheet" href="moviee.css">
 <link rel="stylesheet" href="style.css">
 
 
@@ -58,9 +58,9 @@ $moviedata=$movie->getById();
     
 <nav class="navbar navbar-expand-lg navbar-custom "  >
   <div class="container-fluid" >
-    <a class="navbar-brand" href="#" ><h1 style="text-shadow:2px 4px 6px  white">Circuit</h1></a>
+  <a class="navbar-brand" href="index.php" ><img src="logo.png" alt="logo" height="40" width="100"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+      <span class="navbar-toggler-icon"><i class="fa-solid fa-bars" style="color:white"></i></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
@@ -82,15 +82,7 @@ $moviedata=$movie->getById();
         <li class="nav-item">
           <a class="nav-link" href="south.php">south</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Creator
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="admin/index.php">Admin Panel</a></li>
-            
-          </ul>
-        </li>
+       
       </ul>
     </div>
   </div>
@@ -102,20 +94,23 @@ $moviedata=$movie->getById();
     <!-- title -->
     
   <br>
- 
-       <h1> 
+  
+       <h1 style="font-size:2rem ;font-family:times new roman;"> 
+        <b>
         <?php
         echo $moviedata->title;
         ?>
+        </b>
         </h1>
-        
-        <h5 class="updated_on"><?php  if($moviedata->updated_on != "0000-00-00"){
-        echo "Updated_on: ". $moviedata->updated_on;}?> </h5>
+
+        <h6 class="updated_on"><?php  if($moviedata->updated_on != "0000-00-00"){
+        echo "Last_Modified_on: ". $moviedata->updated_on;}?> </h6>
         
         
 
         
-        <hr>
+        
+        
 
 
        
@@ -126,25 +121,31 @@ $moviedata=$movie->getById();
 
   <div class="picture">
     <img src="<?php
-    echo $moviedata->image; ?>" alt="">
+    echo $moviedata->image ?>" alt="">
   </div>
 
 </div>
 <br>
 <!-- storyline -->
 <div class="storyline">
+<div style="background-color:black;color:white;height:7vh;padding-top:0.5vh">
+  <h3><b>Storyline</b></h3>
+        </div>
+  <h6>
   <p><?php
   echo  htmlspecialchars_decode($moviedata->detail);
   ?>
   </p>
-    
+        </h6>
 
      
 </div>
 <!-- starcast -->
 <div class="StarCast" >
   <hr>
-  <h1>Top Cast</h1>
+  <div style="background-color:black;color:white;height:7vh;padding-top:0.5vh">
+  <h3><b>Top Cast</b></h3>
+        </div>
   <hr>
 
 
@@ -159,7 +160,7 @@ for($x=1;$x<=6;$x++){?>
     
   <div class="castbox"><img src="<?php echo htmlspecialchars_decode($moviedata->$pic);?>">
 </div>
-  <h4><?php echo htmlspecialchars_decode($moviedata->$name);?></h4>
+  <h6 style="margin-left:3vw"><?php echo htmlspecialchars_decode($moviedata->$name);?></h6>
 
 </div>
 
@@ -170,98 +171,69 @@ for($x=1;$x<=6;$x++){?>
     
   </div>
 
-
-
-
-<!-- <div class="containermovie">
-
-</div>
- <?php
-
-for($x=1;$x<=6;$x++){?>
-  
-  <div class="boxes-movie">
-    <?php $pic="cast_".$x."_pic"; ?>
-    <?php $name="cast_".$x; ?>
-    
-  <div class="box-movie"><img src="<?php echo htmlspecialchars_decode($moviedata->$pic);?>"></div>
-  <h4><?php echo htmlspecialchars_decode($moviedata->$name);?></h4>
 </div>
 
-
-<?php
-}
-?>
-</div> -->
 
 
 <hr>
 
-
-<h1>Details:</h1>
+<div style="background-color:black;color:white;height:7vh;padding-top:0.5vh">
+<h3><b>Details:</b></h3>
+</div>
 <hr>
-<div class="details" >
-  <h5><span style="color:red;width:180px; display:inline-block;">IMDB rating  : </span><?php echo  $moviedata->imdb; ?></h5>
+<div class="details" style="font-family:serif" >
+  <h4><span style="width:170px; display:inline-block;">IMDB rating  : </span><span style="font-size:1rem;"><?php echo  $moviedata->imdb; ?></span></h4>
   <hr>
-  <h5><span style="color:red;width:180px; display:inline-block;">Genre     :    </span><?php echo  $moviedata->genre; ?></h5>
+  <h4><span style=";width:170px; display:inline-block;">Genre     :    </span><span style="font-size:1rem;"><?php echo  $moviedata->genre; ?></span></h4>
   <hr>
-<h5><span style="color:red;width:180px; display:inline-block;">Director     :</span><?php   echo $moviedata->director;?></h5>
+<h4><span style=";width:170px; display:inline-block;">Director     :</span><span style="font-size:1rem;"><?php   echo $moviedata->director;?></span></h4>
 <hr>
-<h5><span style="color:red;width:180px; display:inline-block;">Producer:</span><?php echo $moviedata->producer;?></h5>
+<h4><span style=";width:170px; display:inline-block;">Producer:</span><span style="font-size:1rem;"><?php echo $moviedata->producer;?></span></h4>
 <hr>
-<h5><span style="color:red;width:180px; display:inline-block;">Writer :</span ><?php echo $moviedata->writer;?></h5>
+<h4><span style=";width:170px; display:inline-block;">Writer :</span ><span style="font-size:1rem;"><?php echo $moviedata->writer;?></span></h4>
 <hr>
-<h5><span style="color:red;width:180px; display:inline-block;">Budget:</span><?php echo $moviedata->budget; ?></h5>
+<h4><span style=";width:170px; display:inline-block;">Budget:</span><span style="font-size:1rem;"><?php echo $moviedata->budget; ?></span></4>
 <hr>
-<h5><span style="color:red;width:180px; display:inline-block;">Released Date:</span><?php echo $moviedata->released_date; ?></h5>
+<h4><span style=";width:170px; display:inline-block;">Released Date:</span><span style="font-size:1rem;"><?php echo $moviedata->released_date; ?></span></h4>
 <hr>
-<h5><span style="color:red;width:180px; display:inline-block;">Boxoffice Collection:</span><?php echo $moviedata->boxoffice_collection; ?></h5>
+<h4><span style=";width:170px; display:inline-block;">Boxoffice Collection:</span><span style="font-size:1rem;"><?php echo $moviedata->boxoffice_collection; ?></span></h4>
 
 </div>
 <hr>
 
-<h3>My Opinion</h3>
-<hr>
-<div class="myreview">
+<div style="background-color:black;color:white;height:7vh;padding-top:0.5vh">
+<h3><b>Our Opinion</b></h3>
+</div>
+
+<div class="myreview" >
 <p><?php
 echo htmlspecialchars_decode($moviedata->my_opinion);
 ?></p>
 </div>
 
 <hr>
-<h2>Review by Famous Reviewer</h2>
-<hr>
+<div style="background-color:black;color:white;height:7vh;padding-top:0.5vh">
+<h3><b>Trailer</b></h3>
+</div>
+<br>
+
 <div class="otherreview">
   <div class="container-2" style="grid-column-gap:0.5rem;">
     <div class="boxes-2">
       <div class="box-2">
-      <iframe width="560" height="315" src="<?php echo $moviedata->famous_review_1; ?>" title="New KGF or Pushpa ? Dasara Teaser Review / Nani / Jasstag" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="<?php echo $moviedata->trailer; ?>" title="New KGF or Pushpa ? Dasara Teaser Review / Nani / Jasstag" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       
       </div>
      
     </div>
     
   
-   <div class="boxes-2">
-    <div class="box-2">
-    <iframe width="560" height="315" src="<?php echo $moviedata->famous_review_2; ?>" title="New KGF or Pushpa ? Dasara Teaser Review / Nani / Jasstag" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div></div>
+   
  
     
   
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
       
       </div>
 

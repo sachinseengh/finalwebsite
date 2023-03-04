@@ -7,23 +7,23 @@ require_once('movie.class.php');
 class Movies extends Common
 {
     public $id, $title,$list,$latest, $bollywood,
-        $south,$marvel,$dc, $image, $background_image, $detail, $cast_1,
+        $south,$marvel,$dc, $image, $detail, $cast_1,
         $cast_1_pic,
-        $cast_2, $cast_2_pic,$cast_3, $cast_3_pic,$cast_4, $cast_4_pic,$cast_5, $cast_5_pic,$cast_6, $cast_6_pic, $imdb,$genre,$director,$producer,$writer,$budget,$my_opinion,$famous_review_1,$famous_review_2,$created_date,$updated_on;
+        $cast_2, $cast_2_pic,$cast_3, $cast_3_pic,$cast_4, $cast_4_pic,$cast_5, $cast_5_pic,$cast_6, $cast_6_pic, $imdb,$genre,$director,$producer,$writer,$budget,$my_opinion,$trailer,$created_date,$updated_on;
 
     public function save()
     {
         $conn = mysqli_connect('localhost', 'root', '', 'website');
         $sql = "insert into 
-               movie(title,list,latest,bollywood,south,marvel,dc,image,background_image,detail,cast_1,cast_1_pic,cast_2,cast_2_pic,cast_3,cast_3_pic,cast_4,cast_4_pic,cast_5,cast_5_pic,cast_6,cast_6_pic, 
-               imdb,genre,director,producer,writer,budget,released_date,boxoffice_collection,my_opinion,famous_review_1,famous_review_2,
+               movie(title,list,latest,bollywood,south,marvel,dc,image,detail,cast_1,cast_1_pic,cast_2,cast_2_pic,cast_3,cast_3_pic,cast_4,cast_4_pic,cast_5,cast_5_pic,cast_6,cast_6_pic, 
+               imdb,genre,director,producer,writer,budget,released_date,boxoffice_collection,my_opinion,trailer,
 created_date) values('$this->title','$this->list',
                 '$this->latest','$this->bollywood',
                 '$this->south',
                 '$this->marvel',
                 '$this->dc',
                 '$this->image',
-                '$this->background_image',
+                
                 '$this->detail',
                 '$this->cast_1'
                 ,'$this->cast_1_pic', 
@@ -46,8 +46,8 @@ created_date) values('$this->title','$this->list',
                 '$this->released_date',
                 '$this->boxoffice_collection',
                 '$this->my_opinion',
-                '$this->famous_review_1',
-                '$this->famous_review_2',
+                '$this->trailer',
+                
                 '$this->created_date')";
                 
 
@@ -103,8 +103,8 @@ created_date) values('$this->title','$this->list',
                                      budget='$this->budget', 
                                      released_date='$this->released_date',
                                      boxoffice_collection='$this->boxoffice_collection',
-                                     my_opinion='$this->my_opinion', famous_review_1='$this->famous_review_1', 
-                                    famous_review_2='$this->famous_review_2',
+                                     my_opinion='$this->my_opinion', trailer='$this->trailer', 
+                                    
                                     updated_on='$this->updated_on'
                                     where id='$this->id'";
                                     // print_r($sql);

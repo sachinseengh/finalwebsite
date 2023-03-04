@@ -20,7 +20,7 @@
     $movies->set('marvel',$_POST['marvel']);
     $movies->set('dc',$_POST['dc']);
     $movies->set('image', $_POST['image']);
-    $movies->set('background_image', $_POST['background_image']);
+    
     $movies->set('detail', $_POST['detail']);
     $movies->set('cast_1', $_POST['cast_1']);
     $movies->set('cast_1_pic',$_POST['cast_1_pic']);
@@ -43,8 +43,8 @@
     $movies->set('released_date',$_POST['released_date']);
     $movies->set('boxoffice_collection',$_POST['boxoffice_collection']);
     $movies->set('my_opinion',$_POST['my_opinion']);
-    $movies->set('famous_review_1',$_POST['famous_review_1']);
-    $movies->set('famous_review_2',$_POST['famous_review_2']);
+    $movies->set('trailer',$_POST['trailer']);
+    
     $movies->set('updated_on', date('Y-m-d '));
 
 
@@ -159,11 +159,7 @@
                             <input type="text" class="form-control" name="image" id="image" required  
                             value=<?php  echo $retrieveData->image; ?>>
                         </div>
-                        <div class="form-group">
-                            <label>Background_image</label>
-                            <input type="text" class="form-control" name="background_image" id="background_image" required   value=<?php  echo $retrieveData->background_image; ?>>
-                        </div>
-                      
+                       
                         
                         <div class="form-group">
                             <label>Detail</label>
@@ -273,14 +269,11 @@
                         </div>
                         
                         <div class="form-group">
-                            <label>famous_review_1</label>
-                            <input type="text" class="form-control" name="famous_review_1"  required value="<?php echo $retrieveData->famous_review_1; ?>">
+                            <label>Trailer</label>
+                            <input type="text" class="form-control" name="trailer"  required value="<?php echo $retrieveData->trailer; ?>">
                         </div>
 
-                        <div class="form-group">
-                            <label>famous_review_2</label>
-                            <input type="text" class="form-control" name="famous_review_2"  required value="<?php echo $retrieveData->famous_review_2; ?>">
-                        </div>
+                        
                        
 
                         <button type="submit" name="submit" value='submit' class="btn btn-success">Submit Button</button>

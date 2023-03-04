@@ -18,7 +18,7 @@ include('../class/common.class.php');
     $movies->set('marvel',$_POST['marvel']);
     $movies->set('dc',$_POST['dc']);
     $movies->set('image', $_POST['image']);
-    $movies->set('background_image', $_POST['background_image']);
+
     $movies->set('detail', $_POST['detail']);
     $movies->set('cast_1', $_POST['cast_1']);
     $movies->set('cast_1_pic',$_POST['cast_1_pic']);
@@ -42,15 +42,15 @@ include('../class/common.class.php');
     $movies->set('boxoffice_collection',$_POST['boxoffice_collection']);
 
     $movies->set('my_opinion',$_POST['my_opinion']);
-    $movies->set('famous_review_1',$_POST['famous_review_1']);
-    $movies->set('famous_review_2',$_POST['famous_review_2']);
+    $movies->set('trailer',$_POST['trailer']);
+    
 
     $movies->set('created_date', date('Y-m-d H:i:s'));
 
     // print_r($movies);   
     $result = $movies->save();   
     if(is_integer($result)){
-        $ErrMs= "";
+        $ErrMs= "failed";
         $msg = "Movie inserted Successfully with id ".$result;
     }else{
         $msg = ""; 
@@ -151,13 +151,10 @@ include('../class/common.class.php');
                         </div>
                      
                         <div class="form-group">
-                            <label>Image</label>
+                            <label>Image(Trailer pic only)</label>
                             <input type="text" class="form-control" name="image" id="image" required>
                         </div>
-                        <div class="form-group">
-                            <label>Background_image</label>
-                            <input type="text" class="form-control" name="background_image" id="background_image" required>
-                        </div>
+                        
                       
                         
                         <div class="form-group">
@@ -259,14 +256,11 @@ include('../class/common.class.php');
                         </div>
                         
                         <div class="form-group">
-                            <label>famous_review_1</label>
-                            <input type="text" class="form-control" name="famous_review_1"  required>
+                            <label>Trailer(embedded https only)</label>
+                            <input type="text" class="form-control" name="trailer"  required>
                         </div>
 
-                        <div class="form-group">
-                            <label>famous_review_2</label>
-                            <input type="text" class="form-control" name="famous_review_2"  required>
-                        </div>
+                        
                        
                     
                         <button type="submit" name="submit" value='submit' class="btn btn-success">Submit Button</button>

@@ -1,6 +1,6 @@
 .swiper{
     width:100vw;
-    
+   
 }
 
 
@@ -27,9 +27,16 @@ color:rgb(104, 106, 104);
   @media(min-width:1100px){
     
     .swiper{
-      margin-left: 20%;
-      padding-top: 15px;
+      width:70vw;
+      /* margin-top: 3vh; */
+  }
+    }
+    
 
-      width:60vw;
+@media(max-width:1100px){
+
+  
+    .sticky-container{
+      display:none;
     }
   }

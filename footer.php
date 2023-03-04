@@ -34,10 +34,12 @@
      const swiper = new Swiper('.swiper', {
      
      autoplay:{
-       delay:1200,
+       delay:1500,
+       
        disableOnInteraction:false,
      },
        loop: true,
+       
       
      
        

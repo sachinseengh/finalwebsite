@@ -71,9 +71,9 @@ if(count($error)<1){
 
 <nav class="navbar navbar-expand-lg navbar-custom">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><h1  style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;text-shadow:2px 4px 6px  white;color:black">Circuit</h1></a>
+    <a class="navbar-brand" href="index.php"><img src="../logo.png" alt="logo" height="40" width="100"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon" style="color:white">....</span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
@@ -96,15 +96,7 @@ if(count($error)<1){
         <li class="nav-item">
           <a class="nav-link" href="../south.php">South</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:rgb(253, 252, 250);"">
-            Creator 
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Admin Panel</a></li>
-            
-          </ul>
-        </li>
+       
       </ul>
     </div>
   </div>
@@ -154,12 +146,7 @@ if(count($error)<1){
 </div>
 </div>
 
-  <div class="footer">
-    <footer>
-      <h3 style="font-size:15px;">Copywright by <span ">Reviewer.com</span>. For Copywright isssue contact our <span >Facebook page</span> or  contact on us at <span  ><a href = "mailto:sachinseengh@gmail.com?subject = Feedback&body = Message">
-        Email us for Copyright
-        </a></span></h3>
-  </footer>
+  
   
   
   <!-- script area -->

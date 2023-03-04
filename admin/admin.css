@@ -199,7 +199,7 @@ body {
     /* margin-left: 220px;
     margin-right:200px; */
     height: fit-content;
-    height:84.2vh;
+    height:86vh;
     z-index: 3;
   }
   span.name {
@@ -236,7 +236,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #0c0c0c;
-    height:5vh;
+    height:fit-content;
     z-index: 4;
     width:100vw;
     

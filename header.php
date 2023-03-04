@@ -15,7 +15,7 @@
     
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
 
-
+    
 <script src="script.js"></script>
 <link
   rel="stylesheet"
@@ -34,3 +34,26 @@
      
 </head>
 <body>
+<div class="sticky-container">
+    <ul class="sticky">
+        <li>
+            <img src="https://www.pngmart.com/files/15/Circle-Facebook-Logo-PNG-Pic.png" width="32" height="32">
+            <p><a href="https://www.facebook.com/codexworld" >Like Us on<br>Facebook</a></p>
+        </li>
+        <li>
+            <img src="https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/instagram-512.png" width="32" height="32">
+            <p><a href="https://twitter.com/codexworldblog" target="_blank">Follow Us on<br>Instagram</a></p>
+        </li>
+        <li>
+            <img src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png" width="32" height="32">
+            <p><a href="https://plus.google.com/codexworld" target="_blank">Follow Us on<br>Twitter</a></p>
+        </li>
+        
+       
+        
+        <li>
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="32" height="32">
+            <p><a href="http://www.youtube.com/codexworld" target="_blank">Subscribe on<br>Github</a></p>
+        </li>
+    </ul>
+</div>
