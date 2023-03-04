@@ -1,4 +1,5 @@
 <?php
+#ok
  include('headerFooter/header.php');
  
  include('../class/movie.class.php');
